@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="moon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#15191b" />
+    <meta name="description" content="浙大城市学院常用入口与搜索导航。" />
+    <title>HZCU 轻首页</title>
+    <link rel="icon" type="image/svg+xml" href="assets/mark.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="HZCU 轻首页">
+        <img class="brand-mark" src="assets/mark.svg" alt="" />
+        <span class="brand-copy">
+          <span class="brand-title">HZCU <span>轻首页</span></span>
+          <span class="brand-subtitle">浙大城市学院 · 常用导航</span>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="切换到 SUN 模式" title="切换 SUN / MOON 模式">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.8"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 15.3A8.4 8.4 0 0 1 8.7 3.9 8.5 8.5 0 1 0 20.1 15.3Z"></path></svg>
+        </button>
+        <button class="icon-button settings-toggle" id="settings-toggle" type="button" aria-label="管理分类和链接" title="管理分类和链接">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.7a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Z"></path><path d="m19.3 13.7 1.1.9-1.5 2.6-1.4-.5a7.7 7.7 0 0 1-1.5.9l-.3 1.5h-3l-.3-1.5a7.7 7.7 0 0 1-1.5-.9l-1.4.5L8 14.6l1.1-.9a7.1 7.1 0 0 1 0-1.8L8 11l1.5-2.6 1.4.5a7.7 7.7 0 0 1 1.5-.9l.3-1.5h3l.3 1.5a7.7 7.7 0 0 1 1.5.9l1.4-.5 1.5 2.6-1.1.9a7.1 7.1 0 0 1 0 1.8Z"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="search-hero" aria-label="搜索">
+        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR CAMPUS, ONE CLICK AWAY <span class="eyebrow-line"></span></p>
+        <h1>从这里，轻松开始</h1>
+        <p class="hero-caption">学习、校园服务与日常所需，一页直达</p>
+
+        <form class="search-bar" id="search-form" role="search">
+          <div class="engine-picker">
+            <button class="engine-toggle" id="engine-toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+              <span class="engine-mark" id="engine-mark" aria-hidden="true">B</span>
+              <span class="engine-name" id="engine-name">百度</span>
+              <svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"></path></svg>
+            </button>
+            <div class="engine-menu" id="engine-menu" role="listbox" aria-label="选择搜索引擎" hidden></div>
+          </div>
+          <label class="search-input-wrap" for="search-input">
+            <span class="visually-hidden">搜索网页或输入网址</span>
+            <input id="search-input" name="q" type="search" autocomplete="off" placeholder="搜索网页或输入网址" />
+          </label>
+          <button class="search-submit" type="submit" aria-label="搜索">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.4 4.4"></path></svg>
+          </button>
+        </form>
+        <div class="search-hint"><kbd>Enter</kbd><span>开始搜索</span><span class="hint-dot"></span><span>选择左侧图标切换引擎</span></div>
+      </section>
+
+      <section class="links-section" aria-label="常用链接分类">
+        <div class="links-section-heading">
+          <div>
+            <p class="section-overline">QUICK ACCESS</p>
+            <h2>常用入口</h2>
+          </div>
+          <button class="text-button" id="add-first-link" type="button"><span aria-hidden="true">＋</span> 添加链接</button>
+        </div>
+        <div class="columns-grid" id="columns-grid" aria-live="polite"></div>
+        <div class="footer-note"><span class="footer-mark" aria-hidden="true">✳</span> 让每一次新建标签页，都从熟悉的地方开始。</div>
+      </section>
+    </main>
+
+    <dialog class="dialog settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="dialog-overline">PERSONALIZE YOUR PAGE</p>
+          <h2 id="settings-title">管理常用入口</h2>
+          <p class="dialog-description">编辑三栏分类与链接，改动会保存在当前浏览器账号中。</p>
+        </div>
+        <button class="icon-button dialog-close" type="button" data-close-dialog="settings-dialog" aria-label="关闭设置">×</button>
+      </div>
+      <div class="editor-toolbar">
+        <span class="editor-count" id="editor-count"></span>
+        <button class="primary-button" id="add-group" type="button"><span aria-hidden="true">＋</span> 新建分类</button>
+      </div>
+      <div class="settings-content" id="settings-content"></div>
+      <div class="dialog-footnote"><span class="sync-indicator" aria-hidden="true"></span>设置使用浏览器同步存储；Chrome 和 Edge 各自独立。</div>
+    </dialog>
+
+    <dialog class="dialog item-dialog" id="item-dialog" aria-labelledby="item-dialog-title">
+      <form id="item-form" novalidate>
+        <div class="dialog-heading compact-heading">
+          <div>
+            <p class="dialog-overline">QUICK ACCESS EDITOR</p>
+            <h2 id="item-dialog-title">添加链接</h2>
+          </div>
+          <button class="icon-button dialog-close" type="button" data-close-dialog="item-dialog" aria-label="关闭编辑器">×</button>
+        </div>
+        <div class="form-fields">
+          <label class="form-field" id="item-title-field"><span>名称</span><input name="title" maxlength="48" required placeholder="例如：学生事务系统" /></label>
+          <label class="form-field" id="item-url-field"><span>网址</span><input name="url" type="url" placeholder="https://example.edu.cn" autocomplete="url" /></label>
+          <label class="form-field" id="item-column-field"><span>所属栏目</span><select name="columnId" id="item-column"></select></label>
+          <label class="form-field" id="item-group-field"><span>所属分类</span><select name="groupId" id="item-group"></select></label>
+          <p class="form-error" id="form-error" role="alert"></p>
+        </div>
+        <div class="form-actions">
+          <button class="secondary-button" type="button" data-close-dialog="item-dialog">取消</button>
+          <button class="primary-button" type="submit">保存</button>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <noscript>此新标签页需要启用 JavaScript 才能显示分类和链接。</noscript>
+  </body>
+</html>
