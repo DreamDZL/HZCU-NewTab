@@ -1,33 +1,23 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="moon">
+<html lang="zh-CN" data-theme="moon" data-theme-mode="moon">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#15191b" />
-    <meta name="description" content="浙大城市学院常用入口与搜索导航。" />
+    <meta name="theme-color" content="#242424" />
     <title>HZCU 轻首页</title>
-    <link rel="icon" type="image/svg+xml" href="assets/mark.svg" />
+    <link rel="icon" type="image/png" href="assets/hzcu-seal.png" />
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
-    <div class="ambient ambient-one" aria-hidden="true"></div>
-    <div class="ambient ambient-two" aria-hidden="true"></div>
-
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="HZCU 轻首页">
-        <img class="brand-mark" src="assets/mark.svg" alt="" />
-        <span class="brand-copy">
-          <span class="brand-title">HZCU <span>轻首页</span></span>
-          <span class="brand-subtitle">浙大城市学院 · 常用导航</span>
-        </span>
-      </a>
       <div class="topbar-actions">
-        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="切换到 SUN 模式" title="切换 SUN / MOON 模式">
+        <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="当前 MOON 模式，点击切换到 SUN 模式" title="当前 MOON 模式，点击切换到 SUN 模式">
           <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.8"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
           <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 15.3A8.4 8.4 0 0 1 8.7 3.9 8.5 8.5 0 1 0 20.1 15.3Z"></path></svg>
+          <svg class="system-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4.5" width="16" height="12" rx="2"></rect><path d="M2.5 20h19M9 16.5v3.5m6-3.5v3.5"></path></svg>
         </button>
-        <button class="icon-button settings-toggle" id="settings-toggle" type="button" aria-label="管理分类和链接" title="管理分类和链接">
+        <button class="icon-button settings-toggle" id="settings-toggle" type="button" aria-label="管理分类和链接" title="设置">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.7a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Z"></path><path d="m19.3 13.7 1.1.9-1.5 2.6-1.4-.5a7.7 7.7 0 0 1-1.5.9l-.3 1.5h-3l-.3-1.5a7.7 7.7 0 0 1-1.5-.9l-1.4.5L8 14.6l1.1-.9a7.1 7.1 0 0 1 0-1.8L8 11l1.5-2.6 1.4.5a7.7 7.7 0 0 1 1.5-.9l.3-1.5h3l.3 1.5a7.7 7.7 0 0 1 1.5.9l1.4-.5 1.5 2.6-1.1.9a7.1 7.1 0 0 1 0 1.8Z"></path></svg>
         </button>
       </div>
@@ -35,74 +25,84 @@
 
     <main id="top">
       <section class="search-hero" aria-label="搜索">
-        <p class="eyebrow"><span class="eyebrow-line"></span> YOUR CAMPUS, ONE CLICK AWAY <span class="eyebrow-line"></span></p>
-        <h1>从这里，轻松开始</h1>
-        <p class="hero-caption">学习、校园服务与日常所需，一页直达</p>
-
+        <div class="campus-logo">
+          <img src="assets/hzcu-seal.png" alt="浙大城市学院校徽" />
+          <span class="campus-eagle-hit" aria-hidden="true"></span>
+          <svg class="campus-eagle-outline" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+            <polygon points="73.05,38.36 59.97,38.44 56.78,39.63 54.86,41.31 53.19,38.84 52.63,36.12 53.67,34.77 56.46,34.21 54.15,33.25 51.91,33.17 48.17,35.57 45.37,41.31 43.3,39.55 40.03,38.44 26.87,38.52 28.07,41.47 30.3,43.22 37.96,43.54 38.92,44.26 39,45.37 38.12,46.33 32.22,46.41 32.7,47.85 35.09,50.8 36.76,51.36 41.23,51.36 42.11,51.91 42.26,53.19 41.55,53.99 37.64,54.07 38.04,55.58 40.19,58.61 45.45,59.89 45.06,61.48 42.5,61.64 42.82,62.84 44.66,65.23 47.45,66.19 47.61,67.15 46.57,68.74 46.73,70.41 50.08,73.29 52.07,71.93 53.35,70.1 52.47,66.27 55.82,64.83 57.5,61.64 54.86,61.48 54.47,59.89 59.57,58.77 61.88,55.9 62.44,54.07 58.45,53.99 57.66,53.03 57.89,51.91 58.69,51.36 64.27,50.96 66.27,49.44 67.7,46.41 61.8,46.33 61,45.53 61.08,44.26 62.04,43.54 69.78,43.14 71.85,41.47" />
+          </svg>
+        </div>
         <form class="search-bar" id="search-form" role="search">
           <div class="engine-picker">
-            <button class="engine-toggle" id="engine-toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
-              <span class="engine-mark" id="engine-mark" aria-hidden="true">B</span>
-              <span class="engine-name" id="engine-name">百度</span>
+            <button class="engine-toggle" id="engine-toggle" type="button" aria-label="百度搜索引擎" title="百度" aria-haspopup="listbox" aria-expanded="false">
+              <img class="engine-mark" id="engine-mark" src="icons/search/baidu.svg" alt="" />
               <svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"></path></svg>
             </button>
             <div class="engine-menu" id="engine-menu" role="listbox" aria-label="选择搜索引擎" hidden></div>
           </div>
           <label class="search-input-wrap" for="search-input">
             <span class="visually-hidden">搜索网页或输入网址</span>
-            <input id="search-input" name="q" type="search" autocomplete="off" placeholder="搜索网页或输入网址" />
+            <input id="search-input" name="q" type="search" autocomplete="off" placeholder="输入网址或搜索" />
           </label>
-          <button class="search-submit" type="submit" aria-label="搜索">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.4 4.4"></path></svg>
+          <button class="search-submit" type="submit" aria-label="搜索" title="搜索">
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m15.4 15.4 4.3 4.3"></path></svg>
+            <svg class="visit-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"></path><path d="m20 4-9 9"></path><path d="M18 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h5"></path></svg>
           </button>
         </form>
-        <div class="search-hint"><kbd>Enter</kbd><span>开始搜索</span><span class="hint-dot"></span><span>选择左侧图标切换引擎</span></div>
+        <nav class="quick-entries" aria-label="校园快捷入口">
+          <a class="quick-entry" href="http://ccpo-hzcu-edu-cn.webvpn1.hzcu.edu.cn:8118/" target="_blank" rel="noopener noreferrer">📚综合服务网</a>
+          <div class="college-entry-wrap" id="college-entry-wrap">
+            <div id="college-entry"></div>
+            <div class="college-menu" id="college-menu" role="listbox" aria-label="选择关注学院" hidden></div>
+          </div>
+        </nav>
       </section>
 
       <section class="links-section" aria-label="常用链接分类">
-        <div class="links-section-heading">
-          <div>
-            <p class="section-overline">QUICK ACCESS</p>
-            <h2>常用入口</h2>
-          </div>
-          <button class="text-button" id="add-first-link" type="button"><span aria-hidden="true">＋</span> 添加链接</button>
-        </div>
         <div class="columns-grid" id="columns-grid" aria-live="polite"></div>
-        <div class="footer-note"><span class="footer-mark" aria-hidden="true">✳</span> 让每一次新建标签页，都从熟悉的地方开始。</div>
       </section>
     </main>
 
     <dialog class="dialog settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
       <div class="dialog-heading">
         <div>
-          <p class="dialog-overline">PERSONALIZE YOUR PAGE</p>
           <h2 id="settings-title">管理常用入口</h2>
-          <p class="dialog-description">编辑三栏分类与链接，改动会保存在当前浏览器账号中。</p>
         </div>
-        <button class="icon-button dialog-close" type="button" data-close-dialog="settings-dialog" aria-label="关闭设置">×</button>
-      </div>
-      <div class="editor-toolbar">
-        <span class="editor-count" id="editor-count"></span>
-        <button class="primary-button" id="add-group" type="button"><span aria-hidden="true">＋</span> 新建分类</button>
+        <button class="icon-button dialog-close" type="button" data-close-dialog="settings-dialog" aria-label="关闭设置">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"></path></svg>
+        </button>
       </div>
       <div class="settings-content" id="settings-content"></div>
-      <div class="dialog-footnote"><span class="sync-indicator" aria-hidden="true"></span>设置使用浏览器同步存储；Chrome 和 Edge 各自独立。</div>
     </dialog>
 
     <dialog class="dialog item-dialog" id="item-dialog" aria-labelledby="item-dialog-title">
       <form id="item-form" novalidate>
         <div class="dialog-heading compact-heading">
           <div>
-            <p class="dialog-overline">QUICK ACCESS EDITOR</p>
             <h2 id="item-dialog-title">添加链接</h2>
           </div>
-          <button class="icon-button dialog-close" type="button" data-close-dialog="item-dialog" aria-label="关闭编辑器">×</button>
+          <button class="icon-button dialog-close" type="button" data-close-dialog="item-dialog" aria-label="关闭编辑器">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"></path></svg>
+          </button>
         </div>
         <div class="form-fields">
           <label class="form-field" id="item-title-field"><span>名称</span><input name="title" maxlength="48" required placeholder="例如：学生事务系统" /></label>
           <label class="form-field" id="item-url-field"><span>网址</span><input name="url" type="url" placeholder="https://example.edu.cn" autocomplete="url" /></label>
-          <label class="form-field" id="item-column-field"><span>所属栏目</span><select name="columnId" id="item-column"></select></label>
-          <label class="form-field" id="item-group-field"><span>所属分类</span><select name="groupId" id="item-group"></select></label>
+          <div class="form-proxy-option" id="item-proxy-field" hidden>
+            <label><input name="useWebVPN" type="checkbox" /><span>通过校园 WebVPN 访问</span></label>
+            <span class="form-proxy-hint" id="webvpn-hint"></span>
+          </div>
+          <div class="form-field" id="item-column-field">
+            <span>所属分类</span>
+            <div class="custom-select" id="item-column-picker" data-custom-select="item-column" data-custom-select-label="所属分类">
+              <input type="hidden" name="columnId" id="item-column" />
+              <button class="custom-select-trigger" id="item-column-trigger" type="button" data-custom-select-trigger aria-label="所属分类" aria-haspopup="listbox" aria-controls="item-column-menu" aria-expanded="false">
+                <span class="custom-select-value">请选择分类</span>
+                <span class="custom-select-chevron" aria-hidden="true"></span>
+              </button>
+              <div class="custom-select-menu" id="item-column-menu" role="listbox" aria-label="所属分类" aria-hidden="true" popover="manual"></div>
+            </div>
+          </div>
           <p class="form-error" id="form-error" role="alert"></p>
         </div>
         <div class="form-actions">
